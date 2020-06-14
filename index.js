@@ -20,7 +20,11 @@ $(function() {
 
     // Listener to delete item from list
     $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
-        console.log(event.currentTarget);
         $(event.target).closest('li').remove();
+    });
+
+    // Listener to check/uncheck items
+    $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+        $(event.target).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
     });
 });
